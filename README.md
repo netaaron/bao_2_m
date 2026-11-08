@@ -43,7 +43,8 @@ assets/audio/README.txt  音樂與音效說明
 | 角色素材・展昭 | 同上 | characters/zhan/full + neutral, scout, observe, alert, smile, surprised, attack, victory |
 | 角色素材・王朝 | 同上 | characters/wang/full + neutral, report, organize, think, happy, surprised, cheer, completed |
 | 四大角色立繪與表情（36 張） | 裁切包青天 02–09，去背、放大 2 倍，重新合成在與其他三人一致的深藍卡底 | characters/bao/neutral, explain, thinking, surprised, scold, strict, verdict, victory |
-| 角色立繪與表情素材集（32 張） | 包青天全身立繪去背、放大 2 倍 | characters/bao/full |
+| 包青天全身立繪（高解析度單張，1024×1536） | 去背、補齊衣袍內部透明破洞、清除腳邊光暈，縮為 1200 高 | characters/bao/full（角色圖鑑） |
+| 首頁設計稿 1 中央的包青天 | 去背、放大 2 倍 | characters/bao/hero（首頁公堂舞台） |
 | 主要角色設定・立繪與表情 | 包青天半身（指向前方）去背 | characters/bao/half（首頁中央） |
 | 開封府公堂／金融知識書齋／金融調查室／現代金融交易室／最終審判大堂／結案榮譽殿堂 | 縮至 1600 寬 | backgrounds/court, study, investigation, trading, judgment, honor |
 | 場景卡（任務發布…榮譽殿堂） | 2×3 切割 | scenes/briefing, learning, investigation, trading, judgment, honor |
@@ -90,5 +91,4 @@ assets/audio/README.txt  音樂與音效說明
 - 英文發音使用瀏覽器內建語音，不同裝置音色不同；部分舊瀏覽器沒有英文語音時會提示改看 KK 音標。未附真人錄音檔。
 - iPhone／iPad 不允許網頁調整音量，音樂音量與淡入淡出依裝置音量鍵；開關與暫停正常。
 - 背景音樂只有一首，全程循環；若要依場景（公堂、書齋、宣判）換曲，需要更多音樂素材。
-- 包青天全身立繪的原始素材只有小尺寸，已去背放大，畫質略遜於其他三人。
 - 所有報酬率與情境數字為教學示意，不構成投資建議。
