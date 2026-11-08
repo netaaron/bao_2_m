@@ -1,4 +1,4 @@
-/* Case Files module — ported from the first Justice Bao 2.0 build (5 cases, 4 financial labs, grand trial). */
+/* Case Files module — ported from the first Justice Bao build (5 cases, 4 financial labs, grand trial). */
 (function(){
 const VILLAIN_SVG = {
 moth: `<svg viewBox="0 0 120 120" aria-hidden="true">
@@ -519,7 +519,7 @@ function renderHome(){
   </section>
   <div class="mentor-grid wrap" style="padding-block:6px 20px">${['gongsun','bao','zhan'].map(mentorCard).join('')}</div>
   <footer class="wrap foot">
-    <p class="motto">跟著包青天 2.0，用宋代的智慧，打造<em>現代的人生勝算</em>！</p>
+    <p class="motto">跟著包青天 2.1，用宋代的智慧，打造<em>現代的人生勝算</em>！</p>
     <p>本頁所有報酬率與情境數字皆為教學示意，不構成投資建議；過去績效不代表未來表現。</p>
     <span style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center"><button type="button" class="linkish" data-act="nb">打開卷宗筆記（30 字）</button><button type="button" class="linkish" data-act="reset">清除卷宗進度</button></span>
   </footer>`;

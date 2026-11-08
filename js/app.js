@@ -16,7 +16,7 @@
   /* ---------- HUD ---------- */
   function hud(){
     document.querySelector('.hud').innerHTML = `<div class="wrap hud-row">
-      <a class="brand" href="#home" aria-label="包青天 2.0 首頁"><span class="brand-seal">包</span><span class="brand-t"><b>包青天 2.0<i>Justice Bao 2.0</i></b><span>The Financial Detective Academy</span></span></a>
+      <a class="brand" href="#home" aria-label="包青天 2.1 首頁"><span class="brand-seal">包</span><span class="brand-t"><b>包青天 2.1<i>Justice Bao 2.1</i></b><span>The Financial Detective Academy</span></span></a>
       <div class="hud-stats">
         <span class="chip" title="目前得分">${I('star')}<b id="hud-score">0</b></span>
         <span class="chip lvl" title="偵探等級" id="hud-lvl"></span>
@@ -141,7 +141,7 @@
   }
   function help(){
     ui.modal({title:'遊戲說明 How to Play', wide:true, html:`
-      <img src="${JB.asset(JB.ASSETS.ui.poster)}" alt="包青天 2.0 主視覺海報" style="float:right;width:min(38%,210px);margin:0 0 8px 14px;box-shadow:0 0 0 2px var(--gold)">
+      <img src="${JB.asset(JB.ASSETS.ui.poster)}" alt="包青天 2.1 主視覺海報" style="float:right;width:min(38%,210px);margin:0 0 8px 14px;box-shadow:0 0 0 2px var(--gold)">
       <h4>你的身分</h4><p>開封府金融偵探學院的見習偵探。在公孫策、展昭、王朝協助下，破解「人生資產懸案」，最後由包青天開堂判決。</p>
       <h4>主線流程（完成前一關才解鎖下一關）</h4>
       <ol><li><b>金融知識書齋</b>：公孫策逐張教你 9 個核心觀念（含 KK 音標、例句、發音），學完做 3 題小測驗。</li>

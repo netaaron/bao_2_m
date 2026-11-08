@@ -63,7 +63,7 @@ JB.views.home = {
     const map = [['learn','#academy','課程學習：金融書齋'],['missions','#mission','任務挑戰：主線任務'],['tools','#tools','金融工具：試算實驗'],['casestudy','#cases','案例分析：進階卷宗'],['game','#tools','模擬投資：資產配置沙盤'],['ranking','#honor','成就與排名']];
     el.innerHTML = `
       <section class="home-title">
-        <h1>包青天 2.0<i>Justice Bao 2.0</i></h1>
+        <h1>包青天 2.1<i>Justice Bao 2.1</i></h1>
         <p class="academy"><b>開封府金融偵探學院</b><span>The Financial Detective Academy</span></p>
         <p class="tag">正義辦案，也解人生難題！</p>
       </section>

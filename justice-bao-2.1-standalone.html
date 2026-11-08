@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>包青天 2.0 金融偵探學院</title>
+<title>包青天 2.1 Justice Bao 2.1</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="包青天 2.0 Justice Bao 2.0 — The Financial Detective Academy：在開封府的故事裡學會股市英文、金融觀念與風險判斷。">
+<meta name="description" content="包青天 2.1 Justice Bao 2.1 — The Financial Detective Academy：在開封府的故事裡學會股市英文、金融觀念與風險判斷。">
 <meta name="theme-color" content="#10233D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,wght@0,400;0,600;1,400&family=Gentium+Book+Plus&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap">
 <style>
-/* Justice Bao 2.0 — visual system.
+/* Justice Bao 2.1 — visual system.
    Layout concept: a night scene of Kaifeng behind every screen; ivory paper panels with gold frames and chamfered origami corners sit on top; vermilion marks every action. */
 :root{
   --navy:#10233D; --navy-2:#162e4e; --navy-3:#20406a; --navy-4:#2c5385;
@@ -1028,7 +1028,7 @@ html.reduce-motion .flip.flipped .flip-inner{transition:none}
 <canvas id="jb-particles" aria-hidden="true"></canvas>
 <header class="hud"></header>
 <main id="view" aria-live="polite"></main>
-<footer class="wrap" style="padding-block:18px 28px;text-align:center;font-size:13px;color:#9fb0c9;border-top:1px solid rgba(200,155,69,.3)">包青天 2.0｜用宋代的智慧，破解現代市場的英文與思維。 · English for Financial Beginners · 教學用途，不構成投資建議</footer>
+<footer class="wrap" style="padding-block:18px 28px;text-align:center;font-size:13px;color:#9fb0c9;border-top:1px solid rgba(200,155,69,.3)">包青天 2.1｜用宋代的智慧，破解現代市場的英文與思維。 · English for Financial Beginners · 教學用途，不構成投資建議</footer>
 <div id="jb-modal" class="modal" hidden></div>
 <div id="jb-toast" class="toast" role="status" aria-live="polite"></div>
 <div id="jb-pop" class="pop-wrap" aria-live="polite"></div>
@@ -2046,7 +2046,7 @@ JB.views.home = {
     const map = [['learn','#academy','課程學習：金融書齋'],['missions','#mission','任務挑戰：主線任務'],['tools','#tools','金融工具：試算實驗'],['casestudy','#cases','案例分析：進階卷宗'],['game','#tools','模擬投資：資產配置沙盤'],['ranking','#honor','成就與排名']];
     el.innerHTML = `
       <section class="home-title">
-        <h1>包青天 2.0<i>Justice Bao 2.0</i></h1>
+        <h1>包青天 2.1<i>Justice Bao 2.1</i></h1>
         <p class="academy"><b>開封府金融偵探學院</b><span>The Financial Detective Academy</span></p>
         <p class="tag">正義辦案，也解人生難題！</p>
       </section>
@@ -2740,7 +2740,7 @@ JB.views.tools = {
   }
 };
 
-/* Case Files module — ported from the first Justice Bao 2.0 build (5 cases, 4 financial labs, grand trial). */
+/* Case Files module — ported from the first Justice Bao build (5 cases, 4 financial labs, grand trial). */
 (function(){
 const VILLAIN_SVG = {
 moth: `<svg viewBox="0 0 120 120" aria-hidden="true">
@@ -3261,7 +3261,7 @@ function renderHome(){
   </section>
   <div class="mentor-grid wrap" style="padding-block:6px 20px">${['gongsun','bao','zhan'].map(mentorCard).join('')}</div>
   <footer class="wrap foot">
-    <p class="motto">跟著包青天 2.0，用宋代的智慧，打造<em>現代的人生勝算</em>！</p>
+    <p class="motto">跟著包青天 2.1，用宋代的智慧，打造<em>現代的人生勝算</em>！</p>
     <p>本頁所有報酬率與情境數字皆為教學示意，不構成投資建議；過去績效不代表未來表現。</p>
     <span style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center"><button type="button" class="linkish" data-act="nb">打開卷宗筆記（30 字）</button><button type="button" class="linkish" data-act="reset">清除卷宗進度</button></span>
   </footer>`;
@@ -3883,7 +3883,7 @@ JB.CF = {
   /* ---------- HUD ---------- */
   function hud(){
     document.querySelector('.hud').innerHTML = `<div class="wrap hud-row">
-      <a class="brand" href="#home" aria-label="包青天 2.0 首頁"><span class="brand-seal">包</span><span class="brand-t"><b>包青天 2.0<i>Justice Bao 2.0</i></b><span>The Financial Detective Academy</span></span></a>
+      <a class="brand" href="#home" aria-label="包青天 2.1 首頁"><span class="brand-seal">包</span><span class="brand-t"><b>包青天 2.1<i>Justice Bao 2.1</i></b><span>The Financial Detective Academy</span></span></a>
       <div class="hud-stats">
         <span class="chip" title="目前得分">${I('star')}<b id="hud-score">0</b></span>
         <span class="chip lvl" title="偵探等級" id="hud-lvl"></span>
@@ -4008,7 +4008,7 @@ JB.CF = {
   }
   function help(){
     ui.modal({title:'遊戲說明 How to Play', wide:true, html:`
-      <img src="${JB.asset(JB.ASSETS.ui.poster)}" alt="包青天 2.0 主視覺海報" style="float:right;width:min(38%,210px);margin:0 0 8px 14px;box-shadow:0 0 0 2px var(--gold)">
+      <img src="${JB.asset(JB.ASSETS.ui.poster)}" alt="包青天 2.1 主視覺海報" style="float:right;width:min(38%,210px);margin:0 0 8px 14px;box-shadow:0 0 0 2px var(--gold)">
       <h4>你的身分</h4><p>開封府金融偵探學院的見習偵探。在公孫策、展昭、王朝協助下，破解「人生資產懸案」，最後由包青天開堂判決。</p>
       <h4>主線流程（完成前一關才解鎖下一關）</h4>
       <ol><li><b>金融知識書齋</b>：公孫策逐張教你 9 個核心觀念（含 KK 音標、例句、發音），學完做 3 題小測驗。</li>

@@ -1,11 +1,11 @@
 # bao_2_m
 with music and different gates
 
-## 包青天 2.0 Justice Bao 2.0 — 開封府金融偵探學院
+## 包青天 2.1 Justice Bao 2.1 — 開封府金融偵探學院
 股市英文 × 金融知識 × 推理闖關的教育遊戲網站，配上背景音樂〈汴京月夜清輝〉。
 
-- **線上遊玩**：https://netaaron.github.io/bao_2_m/ （需在 Settings → Pages 開啟 GitHub Pages，來源選 `main` / `(root)`）
-- **離線單檔版**：[`justice-bao-2.0-standalone.html`](justice-bao-2.0-standalone.html)（圖片與音樂已內嵌，下載後直接用瀏覽器打開）
+- **線上遊玩**：https://netaaron.github.io/bao_2_m/ （GitHub Pages：Settings → Pages，來源 `main` / `(root)`）
+- **離線單檔版**：[`justice-bao-2.1-standalone.html`](justice-bao-2.1-standalone.html)（圖片與音樂已內嵌，下載後直接用瀏覽器打開）
 - 這個 repo 的根目錄就是網站本身：`index.html`、`css/`、`js/`、`assets/`。本機測試時直接雙擊 `index.html` 即可，不需伺服器。
 - 進度存在瀏覽器 localStorage；背景音樂在第一次點擊畫面後開始播放，右上角 ♪ 可開關。
 
