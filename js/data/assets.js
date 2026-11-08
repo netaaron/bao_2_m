@@ -110,4 +110,5 @@ JB.ASSETS = {
 };
 JB.asset = function(path){ return 'assets/' + path; };
 JB.ASSETS.characters.bao.half = 'characters/bao/half.webp';
+JB.ASSETS.characters.bao.hero = 'characters/bao/hero.webp';
 JB.ASSETS.audio = {bgm:'audio/bgm-bianjing-moonlight.mp3', title:'汴京月夜清輝', en:'Moonlit Night over Bianjing'};

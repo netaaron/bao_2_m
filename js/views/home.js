@@ -37,12 +37,15 @@ JB.views.home = {
     const sc = st.scores(), L = st.level(sc.total), stage = st.stage();
     const started = S.seen.briefing;
     const C = JB.CHARACTERS;
-    const cast = ['gongsun','bao','zhan','wang'].map(id => {
-      const src = id === 'bao' ? JB.asset(JB.ASSETS.characters.bao.half) : JB.body(id);
-      return `<a class="cast-m ${id}" href="#gallery-${id}" aria-label="${C[id].name} ${C[id].title}，查看角色圖鑑">
-        <span class="vtag">${C[id].name}<small>${C[id].title}</small></span>
-        <img src="${src}" alt="${C[id].name}"><span class="cast-name">${C[id].en}</span></a>`;
-    }).join('');
+    const guide = () => {
+      if(!started) return ui.dialog('wang', 'report', '我是王朝，負責回報進度！大人已經升堂了。按下「升堂辦案」，先到金融書齋跟公孫先生學 9 個核心觀念，再闖四大任務。', 'Tap “Start the Mission” to begin.', {cls:'dlg-in'});
+      if(S.m4.done) return ui.dialog('wang', 'completed', `全案已結！你的得分是 ${sc.total} 分。到榮譽殿堂看成績報告，或挑戰進階卷宗的五件案子。`, 'Case closed! Check your report in the Hall of Honor.', {cls:'dlg-in'});
+      const nx = JB.store.nextHash().slice(1);
+      return ui.dialog('wang', stage >= 2 ? 'cheer' : 'organize', `報告大人：目前完成 ${stage} / 4 關，得分 ${sc.total}。下一站是「${JB.UNLOCK_NAME[nx] || '成績報告'}」，按「繼續辦案」就會直接帶你過去！`, 'Tap “Continue the Mission” to go to your next stop.', {cls:'dlg-in'});
+    };
+    const actor = (id, src) => `<a class="actor ${id}" href="#gallery-${id}" aria-label="${C[id].name} ${C[id].title}，查看角色圖鑑">
+        <img src="${src}" alt="${C[id].name}"><span class="vtag">${C[id].name}<small>${C[id].title}</small></span>${id === 'bao' ? '' : `<span class="np">${C[id].en}</span>`}</a>`;
+    const cast = actor('wang', JB.body('wang')) + actor('gongsun', JB.body('gongsun')) + actor('zhan', JB.body('zhan')) + actor('bao', JB.asset(JB.ASSETS.characters.bao.hero));
     const tasks = [
       ['學習金融書齋 9 個觀念', st.cnt(S.academy.learned), 9],
       ['完成單字任務 12 字', st.cnt(S.m1.learned), 12],
@@ -62,22 +65,38 @@ JB.views.home = {
     const kicons = JB.ACADEMY.map((a,i) => `<button type="button" class="kicon" data-k="${i}"><img src="${JB.asset(JB.ASSETS.icons[a.icon])}" alt=""><b>${a.word}</b><span>${a.zh}</span></button>`).join('');
     const map = [['learn','#academy','課程學習：金融書齋'],['missions','#mission','任務挑戰：主線任務'],['tools','#tools','金融工具：試算實驗'],['casestudy','#cases','案例分析：進階卷宗'],['game','#tools','模擬投資：資產配置沙盤'],['ranking','#honor','成就與排名']];
     el.innerHTML = `
-      <section class="home-title">
-        <h1>包青天 2.1<i>Justice Bao 2.1</i></h1>
-        <p class="academy"><b>開封府金融偵探學院</b><span>The Financial Detective Academy</span></p>
-        <p class="tag">正義辦案，也解人生難題！</p>
+      <section class="court-hero">
+        <div class="home-title">
+          <h1>包青天 2.1<i>Justice Bao 2.1</i></h1>
+          <p class="academy"><b>開封府金融偵探學院</b><span>The Financial Detective Academy</span></p>
+          <p class="tag">正義辦案，也解人生難題！</p>
+        </div>
+        <div class="court" aria-label="開封府大堂：包青天與公孫策、展昭、王朝">
+          <span class="sun" aria-hidden="true"></span>
+          ${cast}
+          <div class="desk" aria-hidden="true"><span class="desk-gavel"></span><span class="desk-tube"></span><span class="desk-top"></span><span class="desk-cloth"><span class="plaque"><b>明鏡高懸</b><small>Justice Bao · Chief Judge</small></span></span></div>
+        </div>
+        <div class="court-cta">
+          <button type="button" class="btn btn-red btn-lg" data-act="start">${JB.ICON('gavel')} ${started ? '繼續辦案' : '升堂辦案'}<small>${started ? 'Continue the Mission' : 'Start the Mission'}</small></button>
+          <a class="btn btn-ghost" href="#gallery">${JB.ICON('users')} 認識四位角色</a>
+        </div>
       </section>
-      <section class="home-top">
+      <div class="home-guide">${guide()}</div>
+      <section class="home-info">
         <article class="story-card frame">
           <span class="ribbon">本次任務 <small>Mission</small></span>
           <h2>人生<em>資產</em>懸案</h2><p class="en">The Mystery of Your Life Assets</p>
           <p class="body">投資新手阿明帶著 50 萬元進場，一年後只剩 31 萬。是市場波動？投資判斷錯誤？還是風險管理出了問題？</p>
           <p class="body">加入開封府金融偵探小組，運用英文與投資知識，蒐集線索、分析證據，向包大人提出你的判斷。</p>
+          <div class="case-stats" aria-label="阿明的帳戶">
+            <div><span>期初本金<i>Start</i></span><b>500,000</b></div>
+            <div><span>一年後<i>Now</i></span><b>310,000</b></div>
+            <div class="bad"><span>帳戶報酬<i>Return</i></span><b>−38%</b></div>
+            <div class="good"><span>同期大盤<i>Market</i></span><b>+8%</b></div>
+          </div>
           <ol class="howto"><li>金融書齋：公孫策教你 9 個核心觀念</li><li>四大任務：詞彙、配對、線索、宣判</li><li>包大人開堂，給你最終判決與成績報告</li></ol>
           <p class="tagline">用宋代的智慧，打造現代的人生勝算！</p>
-          <button type="button" class="btn btn-red" data-act="start">${JB.ICON('play')} ${started ? '繼續辦案 Continue' : '開始辦案 Start'}</button>
         </article>
-        <div class="stagebox"><span class="stage-floor"></span><div class="cast">${cast}</div><span class="desk" aria-hidden="true"></span></div>
         <aside class="side frame">
           <h3>偵探進度<small>Your Progress</small></h3>
           <div class="kv"><span>${ui.esc(S.player.name || '見習偵探')}</span><b>關卡 ${stage} / 4</b></div>
